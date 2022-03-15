@@ -15,7 +15,7 @@ public class Used__HttpURLConnection implements ConfData{
             Send_Http_Request_Params__Text.start();
         }
         if (SEND_Http_Request_Params__File) {
-
+            Send_Http_Request_Params__File.start();
         }
 
     }
