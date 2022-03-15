@@ -1,20 +1,20 @@
 package rh.company;
 
 
-public class Used__HttpURLConnection {
+import java.io.IOException;
 
-    static boolean Send_Http_Request__GetResponse = true;
-    static boolean Send_Http_Request_Params__Text = true;
-    static boolean Send_Http_Request_Params__File = true;
+public class Used__HttpURLConnection implements ConfData{
 
-    public static void main(String[] args) {
-        if (Send_Http_Request__GetResponse) {
 
-        }
-        if (Send_Http_Request_Params__Text) {
+
+    public static void main(String[] args) throws IOException {
+        if (SEND_Http_Request__GetResponse) {
 
         }
-        if (Send_Http_Request_Params__File) {
+        if (SEND_Http_Request_Params__Text) {
+            Send_Http_Request_Params__Text.start();
+        }
+        if (SEND_Http_Request_Params__File) {
 
         }
 
