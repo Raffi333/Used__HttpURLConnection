@@ -3,8 +3,7 @@ package rh.company;
 
 import java.io.IOException;
 
-public class Used__HttpURLConnection implements ConfData{
-
+public class Used__HttpURLConnection implements ConfData {
 
 
     public static void main(String[] args) throws IOException {

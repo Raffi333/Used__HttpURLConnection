@@ -17,7 +17,7 @@ public class Send_Http_Request_Params__File implements ConfData {
         connection.setRequestMethod(METHOD);
         connection.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + BOUNDARY);
 
-        File fileForSending = new File("filePath.png");
+        File fileForSending = new File("filepath.png");
         String fileMimeType = Files.probeContentType(fileForSending.toPath());
 
         try (
@@ -44,7 +44,7 @@ public class Send_Http_Request_Params__File implements ConfData {
         int responseCode = connection.getResponseCode();
         System.out.println("response code = " + responseCode); // Should be 200
 
-        System.out.println("This method worked in " + (System.currentTimeMillis() - start_app) + "Ms");
+        System.out.println("(Send_Http_Request_Params__File) This method worked in " + (System.currentTimeMillis() - start_app) + "Ms");
     }
 
 }
