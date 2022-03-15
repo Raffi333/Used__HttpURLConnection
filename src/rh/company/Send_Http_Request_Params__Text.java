@@ -10,6 +10,7 @@ public class Send_Http_Request_Params__Text implements ConfData {
 
 
     public static void start() throws IOException {
+        long start_app = System.currentTimeMillis();
 
         //create HttpURLConnection for connect
         URL url = new URL(HTTP_URL);
@@ -17,7 +18,6 @@ public class Send_Http_Request_Params__Text implements ConfData {
         connection.setDoOutput(true);
         connection.setRequestMethod(METHOD);
         connection.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + BOUNDARY);
-
 
         try (
                 OutputStream output = connection.getOutputStream();
@@ -30,11 +30,13 @@ public class Send_Http_Request_Params__Text implements ConfData {
                 put("surname", "Smith");
                 put("age", "33");
             }};
-            params.forEach((name, value) -> writer.append("--" + BOUNDARY).append(CRLF)
-                    .append("Content-Disposition: form-data; name=").append(name).append(CRLF)
-                    .append("Content-Type: text/plain; charset=" + CHARSET).append(CRLF)
-                    .append(CRLF).append(value).append(CRLF).flush());
-
+            params.forEach((name, value) ->
+                    writer.append("--")
+                            .append(BOUNDARY).append(CRLF)
+                            .append("Content-Disposition: form-data; name=").append(name).append(CRLF)
+                            .append("Content-Type: text/plain; charset=" + CHARSET).append(CRLF)
+                            .append(CRLF)
+                            .append(value).append(CRLF).flush());
 
             // End of multipart/form-data.
             writer.append("--" + BOUNDARY + "--").append(CRLF).flush();
@@ -44,6 +46,8 @@ public class Send_Http_Request_Params__Text implements ConfData {
         connection.connect();
         int responseCode = connection.getResponseCode();
         System.out.println("response code = " + responseCode); // Should be 200
+
+        System.out.println("This method worked in " + (System.currentTimeMillis() - start_app) + "Ms");
     }
 
 
