@@ -47,7 +47,7 @@ public class Send_Http_Request_Params__Text implements ConfData {
         int responseCode = connection.getResponseCode();
         System.out.println("response code = " + responseCode); // Should be 200
 
-        System.out.println("This method worked in " + (System.currentTimeMillis() - start_app) + "Ms");
+        System.out.println("(Send_Http_Request_Params__Text) This method worked in " + (System.currentTimeMillis() - start_app) + "Ms");
     }
 
 
